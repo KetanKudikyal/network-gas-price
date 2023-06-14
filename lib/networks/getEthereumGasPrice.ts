@@ -54,7 +54,7 @@ export async function getEthereumGasPrice(
 
         return {
           result: {
-            lastBlock: parseFloat(response.result.lastBlock),
+            lastBlock: response.result.lastBlock,
             suggestBaseFee: parseFloat(response.result.suggestBaseFee),
             SafeGasPrice: parseFloat(response.result.SafeGasPrice),
             ProposeGasPrice: parseFloat(response.result.ProposeGasPrice),
