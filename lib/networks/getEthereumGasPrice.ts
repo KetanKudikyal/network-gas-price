@@ -19,7 +19,7 @@ export const DEFAULT_FALLBACK_GAS_PRICE = 80;
 
 interface ResponseEthereumGasPrice {
   result: {
-    latestBlock: number;
+    lastBlock: number;
     suggestBaseFee: number;
     SafeGasPrice: number;
     ProposeGasPrice: number;
@@ -54,7 +54,7 @@ export async function getEthereumGasPrice(
 
         return {
           result: {
-            latestBlock: parseFloat(response.result.latestBlock),
+            lastBlock: parseFloat(response.result.lastBlock),
             suggestBaseFee: parseFloat(response.result.suggestBaseFee),
             SafeGasPrice: parseFloat(response.result.SafeGasPrice),
             ProposeGasPrice: parseFloat(response.result.ProposeGasPrice),
@@ -81,7 +81,7 @@ export async function getEthereumGasPrice(
     );
 
     return {
-      latestBlock: responseEthereumGasPrice.result.latestBlock,
+      lastBlock: responseEthereumGasPrice.result.lastBlock,
       low: {
         maxPriorityFeePerGas: lowMaxPriorityFee,
         maxFeePerGas: responseEthereumGasPrice.result.SafeGasPrice,
@@ -103,7 +103,7 @@ export async function getEthereumGasPrice(
         : fallbackGasPrice;
 
     return {
-      latestBlock: null,
+      lastBlock: null,
       low: {
         maxPriorityFeePerGas: gasPrice,
         maxFeePerGas: gasPrice,

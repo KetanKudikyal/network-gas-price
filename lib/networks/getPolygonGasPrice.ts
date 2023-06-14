@@ -11,7 +11,7 @@ export const GAS_STATION_URL_BY_NETWORK: Record<PolygonNetwork, string> = {
 export const DEFAULT_FALLBACK_GAS_PRICE = 50;
 
 interface ResponsePolygonGasPrice {
-  latestBlock: number | null;
+  lastBlock: number | null;
   estimatedBaseFee: number;
   safeLow: {
     maxPriorityFee: number;
@@ -52,7 +52,7 @@ export async function getPolygonGasPrice(
     );
 
     return {
-      latestBlock: responsePolygonGasPrice.latestBlock,
+      lastBlock: responsePolygonGasPrice.lastBlock,
       low: {
         maxPriorityFeePerGas: responsePolygonGasPrice.safeLow.maxPriorityFee,
         maxFeePerGas: responsePolygonGasPrice.safeLow.maxFee,
@@ -74,7 +74,7 @@ export async function getPolygonGasPrice(
         : fallbackGasPrice;
 
     return {
-      latestBlock: null,
+      lastBlock: null,
       low: {
         maxPriorityFeePerGas: gasPrice,
         maxFeePerGas: gasPrice,
