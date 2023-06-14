@@ -53,6 +53,7 @@ export async function getEthereumGasPrice(
 
         return {
           result: {
+            latestBlock : parseFloat(response.result.latestBlock),
             suggestBaseFee: parseFloat(response.result.suggestBaseFee),
             SafeGasPrice: parseFloat(response.result.SafeGasPrice),
             ProposeGasPrice: parseFloat(response.result.ProposeGasPrice),
@@ -79,6 +80,7 @@ export async function getEthereumGasPrice(
     );
 
     return {
+      latestBlock : responseEthereumGasPrice.latestBlock,
       low: {
         maxPriorityFeePerGas: lowMaxPriorityFee,
         maxFeePerGas: responseEthereumGasPrice.result.SafeGasPrice,
@@ -100,6 +102,7 @@ export async function getEthereumGasPrice(
         : fallbackGasPrice;
 
     return {
+      latestBlock : null,
       low: {
         maxPriorityFeePerGas: gasPrice,
         maxFeePerGas: gasPrice,

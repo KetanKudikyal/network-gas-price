@@ -1,11 +1,11 @@
 {
-  "name": "@enzoferey/network-gas-price",
+  "name": "@ketankudikyal/network-gas-price",
   "version": "0.3.4",
   "license": "MIT",
-  "homepage": "https://github.com/enzoferey/network-gas-price",
+  "homepage": "https://github.com/KetanKudikyal/network-gas-price",
   "repository": {
     "type": "git",
-    "url": "https://github.com/enzoferey/network-gas-price.git"
+    "url": "https://github.com/KetanKudikyal/network-gas-price.git"
   },
   "keywords": [
     "ethereum",

@@ -9,6 +9,7 @@ export interface GasPriceLevel {
 }
 
 export interface GasPrice {
+  latestBlock : number | null;
   low: GasPriceLevel;
   average: GasPriceLevel;
   high: GasPriceLevel;
